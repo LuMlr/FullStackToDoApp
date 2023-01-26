@@ -11,6 +11,7 @@ const [todos, setTodos] = useState([]);
         axios
         .get("http://localhost:3003/todos")
         .then((response) => {
+          setTodos(response.data);
             console.log(response.data);
         })
         .catch((err) => {
@@ -20,10 +21,14 @@ const [todos, setTodos] = useState([]);
     
   return (
     <div className="App">
-      {todos.map((todo) => {
-        return <p> {todo.value} </p>
-      })}
       <Form />
+      {todos.map((todo) => {
+        return <>
+        <p> {todo.value} </p>
+        </>
+
+      })}
+      
       </div>
   );
 }
