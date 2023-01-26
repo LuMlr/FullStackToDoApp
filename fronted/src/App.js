@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Form from "./components/Form"
 
 
 function App() {
@@ -22,7 +23,7 @@ const [todos, setTodos] = useState([]);
       {todos.map((todo) => {
         return <p> {todo.value} </p>
       })}
-
+      <Form />
       </div>
   );
 }
